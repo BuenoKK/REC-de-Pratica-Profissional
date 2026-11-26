@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Sistema de cadastro de cursos</h1>
+
+    <Div>
+
+        <main>
+
+
+            <h2>Cadastrar um novo curso:</h2>
+
+            <form id="form-curso">
+                <input type="hidden" id="curso-id">
+
+                <label>Título:</label><br>
+                <input type="text" id="titulo" required><br><br>
+
+                <label>Descrição:</label><br>
+                <textarea id="descricao" rows="3"></textarea><br><br>
+
+                <label>Instrutor:</label><br>
+                <select id="instrutor_id" required>
+                    <option value="">Selecione...</option>
+                </select><br><br>
+
+                <label>Carga Horária (h):</label><br>
+                <input type="number" id="carga_horaria" min="1" required><br><br>
+
+                <label>Modalidade:</label><br>
+                <select id="modalidade" required>
+                    <option value="">Selecione...</option>
+                    <option value="Presencial">Presencial</option>
+                    <option value="Online">Online</option>
+                    <option value="Híbrido">Híbrido</option>
+                </select><br><br>
+
+                <label>Valor (R$):</label><br>
+                <input type="number" id="valor" step="0.01" min="0"><br><br>
+
+                <button type="submit" id="btn-salvar">Salvar</button>
+                <button type="button" id="btn-cancelar" style="display: none;">Cancelar</button>
+            </form>
+
+
+        </main>
+
+    </Div>
+
+    <h2>Lista de Cursos</h2>
+
+    <Div>
+
+        <label>Filtrar por instrutor:</label>
+        <select id="filtro-instrutor">
+            <option value="">Todos os instrutores</option>
+        </select>
+
+    </Div>
+
+    <Div>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Instrutor</th>
+                    <th>Carga Horária</th>
+                    <th>Modalidade</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-cursos">
+            </tbody>
+        </table>
+
+    </Div>
+
+</body>
+
+</html>
